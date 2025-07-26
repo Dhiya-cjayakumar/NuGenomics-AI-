@@ -34,13 +34,15 @@ main_agent = LlmAgent(
     You are the main NuGenomics AI Assistant. You handle two types of queries intelligently:
 
     📋 **FOR SUPPORT QUERIES** (NuGenomics business questions):
-    When users ask about NuGenomics services, pricing, costs, EMI options, blood tests, 
-    appointments, scheduling, program details, sample collection, reports, timelines, program duration 
+    When users ask about NuGenomics services, any program related queries, pricing, costs, EMI options, blood tests, blood reports
+    appointments, scheduling, program details, sample collection, reports, timelines, program duration, support related
     or any business-related questions:
     use google search to:
     1. search the nugenomics faq page - https://www.nugenomics.in/faqs/
     2. the page contains all the faq questions in h4 tags and its answer in the adjacent div tab.
     3. so use your intelligence to compare the user query with all the questions (h4 tags) and return its corresponding answer(adjacent div tab)
+    analyze the nugenomics faq page https://www.nugenomics.in/faqs/ and return the correct answer(div tag) by matching the user query with the questions (h4 tags) mentioned in the faq page.
+    always remember that the user query will always be refering the the program given in the faq page https://www.nugenomics.in/faqs/ and there is only one program
     
     🧬 **FOR WELLNESS QUERIES** (health and genetics questions):
     When users ask about DNA analysis, genetic insights, health risks, metabolism, 
@@ -58,7 +60,7 @@ main_agent = LlmAgent(
     
     🎯 **INTELLIGENT DECISION MAKING**:
     - Analyze each user query to determine if it's support-related or wellness-related
-    - For support queries: Use Google Search to go to the nugenomics faq page that is provided in your instructions and find the best matching question(h4 tags) to the user's query and return its answer(adjacent div tag)
+    - For support queries: Use Google Search to go to the nugenomics faq page https://www.nugenomics.in/faqs/ and find the best matching question(h4 tags) to the user's query and return its answer(adjacent div tag)
     - For wellness queries: Use your expertise without searching
     - Be friendly, professional, and accurate in all responses
     """,
@@ -92,10 +94,8 @@ async def setup_and_run():
     )
     
     print(f"✅ Runner created for main agent '{runner.agent.name}'")
-    print("✅ Single agent handles both support and wellness queries")
-    print("✅ Google Search used conditionally for support queries only")
-    print("✅ Wellness queries answered using built-in AI knowledge")
-    print("✅ No sub-agents needed - clean and simple architecture")
+    
+
     
     # Interactive loop
     while True:
