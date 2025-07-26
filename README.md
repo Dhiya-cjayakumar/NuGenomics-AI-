@@ -88,8 +88,9 @@ runner = Runner(agent=nugenomics_agent, ...)
 Fixed APP_NAME, USER_ID, and SESSION_ID
 
 Session used to manage interaction history
-```
+
 Agent Message Flow
+
 User submits query
 
 Query converted to types.Content
@@ -123,7 +124,10 @@ Frontend	HTML + JavaScript
 Testing	Pytest + AsyncIO
 Session Storage	InMemorySessionService (ADK)
 
-# Project Structure
+Project Structure
+bash
+Copy
+Edit
 my_adk_nugenomics/
 ├── app.py                      # Flask backend
 ├── .env                        # Environment config (DO NOT COMMIT)
@@ -138,14 +142,20 @@ my_adk_nugenomics/
 1. Install dependencies:
 
 pip install -r requirements.txt
+
 2. Create a .env file:
+
 GOOGLE_API_KEY=your_api_key_here
+
 3. Run the server:
+
 python app.py
+
 4. Open in browser:
 Visit http://localhost:5000 and ask away
 
 ✅ Key Features
+
 ✅ Dual-purpose agent (support + wellness)
 
 ✅ Dynamic routing without if-else rules
