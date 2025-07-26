@@ -1,20 +1,20 @@
-# NuGenomics AI Assistant 🤖🧬
+# NuGenomics AI Assistant 
 
 A smart, modern AI agent for **NuGenomics** powered by the **Google Agent Development Kit (ADK)**. This project intelligently handles both **customer support** queries and **genetic wellness** questions, dynamically routing each to the appropriate logic using ADK-native capabilities.
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 This AI assistant is designed to:
 
-- 🔍 **Handle Support Queries** — Fetches real answers from NuGenomics’ [FAQ page](https://www.nugenomics.in/faqs/) using Google Search.
-- 🧠 **Handle Wellness Queries** — Answers using AI's built-in understanding of genetics, DNA, fitness, and health.
-- 🔄 **Dynamic Routing** — Decides which tool or response method to use based on user query, **without hardcoded if-else logic**.
+-  **Handle Support Queries** — Fetches real answers from NuGenomics’ [FAQ page](https://www.nugenomics.in/faqs/) using Google Search.
+-  **Handle Wellness Queries** — Answers using AI's built-in understanding of genetics, DNA, fitness, and health.
+-  **Dynamic Routing** — Decides which tool or response method to use based on user query, **without hardcoded if-else logic**.
 
 ---
 
-## 🧩 Components Breakdown
+##  Components Breakdown
 
 ### 1. **Main Agent Logic (`agentsingle.py`)**
 
@@ -70,9 +70,9 @@ This AI assistant is designed to:
 
 ---
 
-## 🧠 How the AI Works
+##  How the AI Works
 
-### 🔧 Agent Initialization
+###  Agent Initialization
 
 - API key (`GOOGLE_API_KEY`) loaded from `.env` file
 - `Agent` instantiated with:
@@ -140,7 +140,7 @@ my_adk_nugenomics/
 │       └── test_agent.py       # Pytest suite
 └── templates/
     └── index.html              # Frontend interface
-# Setup & Run
+ Setup & Run
 1. Install dependencies:
 bash
 Copy
@@ -170,8 +170,8 @@ Visit http://localhost:5000 and ask away!
 
 ✅ Modular structure (easy to extend)
 
-#Author
+Author
 Dhiya C Jayakumar
 
-#License
+License
 MIT License
