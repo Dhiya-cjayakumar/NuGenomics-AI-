@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NuGenomics AI Assistant</title>
+  <style>
+    /* ... styles as before ... */
+  </style>
+</head>
+<body>
+  <header>
+   
+    <h1>NuGenomics AI Assistant</h1>
+  </header>
+
+  <form id="query-form" autocomplete="off">
+    <label for="query-input">Ask your question:</label>
+    <input type="text" id="query-input" name="query" placeholder="E.g., How much does the program cost?" required autofocus />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="response" hidden></div>
+
+  <script>
+    const form = document.getElementById('query-form');
+    const input = document.getElementById('query-input');
+    const responseDiv = document.getElementById('response');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const query = input.value.trim();
+      if (!query) return;
+
+      responseDiv.hidden = false;
+      responseDiv.textContent = 'Thinking...';
+
+      try {
+        const res = await fetch('/api/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query })
+        });
+
+        if (!res.ok) {
+          throw new Error(`Server responded with ${res.status}`);
+        }
+
+        const data = await res.json();
+        responseDiv.textContent = data.response || "Sorry, I couldn't fetch a response.";
+      } catch (error) {
+        responseDiv.textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
