@@ -30,7 +30,7 @@ This AI assistant is designed to:
 - Integrated using ADK’s `google_search` tool.
 - Used to extract FAQ answers by querying NuGenomics’ FAQ page (instead of direct scraping).
 - Keeps responses up-to-date and accurate.
-- Used the browsers web developer tools to see the underlying HTML structure of the page to find the questions (<h4>) and their answers (adjacent <div>)
+- Used the browsers web developer tools to see the underlying HTML structure of the page to find the questions in h4 tags and their answers in adjacent div tags
 
 ---
 
