@@ -80,7 +80,7 @@ This AI assistant is designed to:
   - Model: `gemini-2.0-flash`
   - Clear, role-based instructions for dual-purpose use
 
-### ⚙️ Session + Runner
+###  Session + Runner
 
 ```python
 session_service = InMemorySessionService()
@@ -88,8 +88,8 @@ runner = Runner(agent=nugenomics_agent, ...)
 Fixed APP_NAME, USER_ID, and SESSION_ID
 
 Session used to manage interaction history
-
-📨 Agent Message Flow
+```
+Agent Message Flow
 User submits query
 
 Query converted to types.Content
@@ -105,9 +105,6 @@ Replies from built-in knowledge (for wellness)
 ### Testing
 Run all tests:
 
-bash
-Copy
-Edit
 pytest
 Features:
 
@@ -127,9 +124,6 @@ Testing	Pytest + AsyncIO
 Session Storage	InMemorySessionService (ADK)
 
 # Project Structure
-bash
-Copy
-Edit
 my_adk_nugenomics/
 ├── app.py                      # Flask backend
 ├── .env                        # Environment config (DO NOT COMMIT)
@@ -142,22 +136,14 @@ my_adk_nugenomics/
     └── index.html              # Frontend interface
  Setup & Run
 1. Install dependencies:
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
 2. Create a .env file:
-env
-Copy
-Edit
 GOOGLE_API_KEY=your_api_key_here
 3. Run the server:
-bash
-Copy
-Edit
 python app.py
 4. Open in browser:
-Visit http://localhost:5000 and ask away!
+Visit http://localhost:5000 and ask away
 
 ✅ Key Features
 ✅ Dual-purpose agent (support + wellness)
